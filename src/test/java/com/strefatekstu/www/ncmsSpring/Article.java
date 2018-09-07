@@ -5,11 +5,23 @@ import org.springframework.data.annotation.Id;
 public class Article {
     @Id
     public String id;
+
     public String title;
     public String author;
     public String content;
     public String subtitle;
     public String dateOfAdding;
+
+    public Article(String title, String author, String content, String subtitle, String dateOfAdding) {
+        this.title = title;
+        this.author = author;
+        this.content = content;
+        this.subtitle = subtitle;
+        this.dateOfAdding = dateOfAdding;
+    }
+
+    public Article() {
+    }
 
     public String getId() {
         return id;
@@ -55,18 +67,9 @@ public class Article {
         this.dateOfAdding = dateOfAdding;
     }
 
-    public Article(String title, String author, String content, String subtitle, String dateOfAdding) {
-        this.title = title;
-        this.author = author;
-        this.content = content;
-        this.subtitle = subtitle;
-        this.dateOfAdding = dateOfAdding;
-    }
-
     @Override
     public String toString() {
-        return String.format("Article[id=%s, title='%s', author='%', content='%', subtitle='%', dateOfAdding='%']", id,
-                title, author, content, subtitle, dateOfAdding);
+        return String.format("Article[id=%s, title='%s', author='%s', content='%s', subtitle='%s', dateOfAdding='%s']",
+                id, title, author, content, subtitle, dateOfAdding);
     }
-
 }
