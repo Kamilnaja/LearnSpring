@@ -25,10 +25,10 @@ public class NcmsSpringApplication {
 
     @Bean
     InitializingBean sendDatabase() {
-        Calendar cal = Calendar.getInstance();
         return () -> {
             articleRepository.save(new Article("title1", "kamil", "content1"));
             articleRepository.save(new Article("title2", "kamil2", "content12"));
+            articleRepository.save(new Article("title3", "kamil", "content super"));
         };
     }
 }
