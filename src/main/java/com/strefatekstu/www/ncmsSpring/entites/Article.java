@@ -1,5 +1,6 @@
 package com.strefatekstu.www.ncmsSpring.entites;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -13,12 +14,13 @@ import javax.persistence.Table;
 @Table(name = "ARTICLES")
 
 public class Article {
+    Calendar cal = Calendar.getInstance();
 
-    public Article(String title, String author, String content, Date dateOfAdding) {
+    public Article(String title, String author, String content) {
         this.title = title;
         this.author = author;
         this.content = content;
-        this.dateOfAdding = dateOfAdding;
+        this.dateOfAdding = cal.getTime();
     }
 
     public Article() {
@@ -26,7 +28,7 @@ public class Article {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "title", nullable = false)
     private String title;
@@ -72,11 +74,11 @@ public class Article {
         this.dateOfAdding = dateOfAdding;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
