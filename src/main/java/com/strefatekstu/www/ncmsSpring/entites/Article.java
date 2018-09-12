@@ -5,11 +5,12 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "article")
+@Table(name = "ARTICLES")
 
 public class Article {
 
@@ -24,16 +25,16 @@ public class Article {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "title", nullable = false)
     private String title;
 
-    @Column
+    @Column(name = "author", nullable = false)
     private String author;
 
-    @Column
+    @Column(name = "content ", nullable = false)
     private String content;
 
     @Column
