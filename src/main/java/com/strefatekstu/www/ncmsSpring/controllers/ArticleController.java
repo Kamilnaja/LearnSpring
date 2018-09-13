@@ -1,9 +1,7 @@
 package com.strefatekstu.www.ncmsSpring.controllers;
 
 import com.strefatekstu.www.ncmsSpring.entites.Article;
-import com.strefatekstu.www.ncmsSpring.repositories.ArticleRepository;
 import com.strefatekstu.www.ncmsSpring.services.ArticleService;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,11 +11,9 @@ import java.util.Optional;
 public class ArticleController {
 
     private ArticleService articleService;
-    private ArticleRepository articleRepository;
 
-    public ArticleController(ArticleService articleService, ArticleRepository articleRepository) {
+    public ArticleController(ArticleService articleService) {
         this.articleService = articleService;
-        this.articleRepository = articleRepository;
     }
 
     @GetMapping("/article")

@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Table(name = "ARTICLES")
 
 public class Article {
-    Calendar cal = Calendar.getInstance();
+    private Calendar cal = Calendar.getInstance();
 
     public Article(String title, String author, String content) {
         this.title = title;
